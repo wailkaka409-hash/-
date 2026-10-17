@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10090b">
+  <title>MAARED | معرض الرسمات</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="الرئيسية"><span class="brand-mark">M</span><span>MAARED<span class="brand-sub"> ART GALLERY</span></span></a>
+    <nav><a class="nav-link active" href="#gallery">الرسمات</a><a class="nav-link" href="#members">الأعضاء</a><a class="nav-link" href="/admin.html">الإدارة</a></nav>
+    <button id="profileBtn" class="profile-chip" type="button"><span class="avatar">؟</span><span id="profileName">اختيار اسم</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> مساحة رسامين التيم</div>
+        <h1>الفنّ له <span>هيبة.</span></h1>
+        <p>معرض الرسمات والشخصيات من مجتمعنا. تصفّح الأعمال، ابحث عن رسمة، واترك بصمتك باسمك المستعار.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#gallery">اكتشف الرسمات <span>←</span></a><button class="btn btn-quiet" id="changeNameBtn" type="button">تغيير الاسم المستعار</button></div>
+        <div class="hero-stats"><div><strong id="artCount">—</strong><span>عمل فني</span></div><i></i><div><strong>RED / BLACK</strong><span>هوية المعرض</span></div></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-monogram">M<span>•</span></div><div class="hero-stamp">ART<br>CREW</div></div>
+    </section>
+
+    <section class="member-strip" id="members">
+      <div class="member-icon">✦</div><div class="member-copy"><strong id="welcomeTitle">أهلًا بك في المعرض</strong><span id="welcomeText">اختر اسمًا مستعارًا ليظهر على ملفك.</span></div>
+      <div id="bannerBadge" class="banner-badge banner-basic">عضو المعرض</div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2>أحدث <span>الرسمات</span></h2><p>كل الأعمال في مكان واحد، بدون أقسام زائدة.</p></div><div class="results-count" id="resultsCount">0 نتيجة</div></div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="ابحث عن رسمة أو اسم..." autocomplete="off"><kbd>بحث</kbd></label>
+        <select id="sortSelect" aria-label="ترتيب الرسمات"><option value="new">الأحدث أولًا</option><option value="az">الاسم: أ إلى ي</option></select>
+      </div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+      <div id="emptyState" class="empty-state" hidden><div class="empty-symbol">✳</div><h3>لا توجد رسمات هنا بعد</h3><p>أضف أعمالك داخل مجلد images، ثم سجّلها في ملف photos.json.</p></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">MAARED <span>ART GALLERY</span></div><p>صُنع للفنّانين، بحسّ أحمر وأسود.</p><a href="/admin.html">لوحة الإدارة</a></footer>
+
+  <dialog id="nameDialog" class="modal">
+    <form id="nameForm" class="modal-card">
+      <button class="modal-close" id="closeNameDialog" type="button" aria-label="إغلاق">×</button>
+      <div class="modal-kicker">YOUR DISPLAY NAME</div><h2>اختر اسمك <span>المستعار</span></h2>
+      <p>لا تحتاج إلى Google أو كلمة مرور. الاسم المستعار ليس إثباتًا لهويتك، لذا لا تستخدمه كوسيلة أمان.</p>
+      <label class="field-label" for="nicknameInput">الاسم المستعار</label><input id="nicknameInput" class="text-field" minlength="2" maxlength="24" placeholder="مثال: 8WI_Artist" required>
+      <div id="nameError" class="error-text" role="alert"></div>
+      <button class="btn btn-primary full-width" type="submit">دخول المعرض <span>←</span></button>
+    </form>
+  </dialog>
+
+  <dialog id="artDialog" class="modal art-modal">
+    <div class="art-modal-card"><button class="modal-close" id="closeArtDialog" type="button" aria-label="إغلاق">×</button><img id="modalImage" alt=""><div class="art-modal-info"><div class="eyebrow">ARTWORK</div><h2 id="modalTitle"></h2><p id="modalDescription"></p><a id="modalDownload" class="btn btn-primary" href="#" download>تحميل الصورة</a></div></div>
+  </dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>

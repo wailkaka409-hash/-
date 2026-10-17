@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10090b"><title>إدارة MAARED</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/admin.css"></head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-mark">M</span><span>MAARED<span class="brand-sub"> ADMIN PANEL</span></span></a><nav><a class="nav-link" href="/">المعرض</a></nav><span class="admin-lock">لوحة الإدارة محمية</span></header>
+<main class="admin-main">
+  <section class="admin-heading"><div class="eyebrow">PRIVATE CONTROL CENTER</div><h1>لوحة <span>الإدارة</span></h1><p>إدارة بنرات أعضاء المعرض. لا تشارك كلمة مرور الإدارة مع أحد.</p></section>
+  <section id="loginPanel" class="admin-panel login-panel"><div class="panel-icon">⌑</div><h2>دخول المدير</h2><p>كلمة المرور تُرسل إلى الخادم عبر اتصال HTTPS ولا تُحفظ في المتصفح.</p><form id="loginForm"><label class="field-label" for="adminPassword">كلمة مرور الإدارة</label><input id="adminPassword" type="password" class="text-field" autocomplete="current-password" required><button class="btn btn-primary full-width" type="submit">فتح لوحة الإدارة</button><div id="loginError" class="error-text" role="alert"></div></form></section>
+  <section id="dashboard" hidden>
+    <div class="admin-panel"><div class="panel-head"><div><div class="eyebrow">MEMBERS</div><h2>الأعضاء</h2></div><button id="refreshBtn" class="btn btn-quiet">تحديث القائمة ↻</button></div><p class="muted">يظهر هنا الأعضاء الذين سجلوا اسمًا مستعارًا. لتمنح بنرًا، اختره من القائمة ثم اضغط حفظ.</p><div id="memberList" class="member-list"></div><div id="memberError" class="error-text" role="alert"></div></div>
+    <div class="admin-panel"><div class="panel-head"><div><div class="eyebrow">BANNER TYPES</div><h2>البنرات المتاحة</h2></div></div><div class="banner-options"><div class="banner-preview normal"><strong>عضو المعرض</strong><span>basic</span></div><div class="banner-preview red"><strong>التيم الأساسي</strong><span>team-red</span></div><div class="banner-preview elite"><strong>عضو النخبة</strong><span>team-elite</span></div><div class="banner-preview gold"><strong>عضو مميز</strong><span>team-gold</span></div></div></div>
+  </section>
+  <div class="admin-back"><a href="/">← العودة إلى المعرض</a></div>
+</main>
+<script src="/admin.js" defer></script>
+</body></html>
